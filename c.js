@@ -15,3 +15,6 @@ function cong(a, b){
 cong(4,2)
 .then(r =>r)
 .catch(e=>console.log(e.message))
+
+// (4+2)*5/2
+// tinhDienTich(a,b,h)
