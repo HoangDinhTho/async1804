@@ -32,5 +32,11 @@ function chia(a, b, fn){
 // (4+2)*5/2
 cong(4,2,(error,tong)=>{
     if(error) return console.log(error.message)
-    console.log(tong)
+    nhan(tong,5,(error,tich)=>{
+        if(error) return console.log(error.message)
+        chia(tich,2,(error, result)=>{
+            if(error) return console.log(error.message)
+            console.log(result)
+        })
+    })
 })
