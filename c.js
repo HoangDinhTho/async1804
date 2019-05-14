@@ -52,15 +52,21 @@ function chia(a,b){
 // }) 
 // .catch(e=>console.log(e.message))
 
-cong(4,'x')
-.then(tong=>{
-    console.log(tong)
-    return 1;
-})
-.then(r=>console.log({'result':r}))
-.catch(e=>e.message)
+// cong(4,'x')
+// .then(tong=>{
+//     console.log(tong)
+//     return 1;
+// })
+// .then(r=>console.log({'result':r}))
+// .catch(e=>e.message)
+// .then(r=>console.log(r))
+// .catch(err=>console.log(err.message))
+
+function tinhDienTich(a,b,h){
+    return cong(a,b)
+    .then(tong=>nhan(tong, h))
+    .then(tich=>chia(tich, 2))
+}
+tinhDienTich(4,2,'x')
 .then(r=>console.log(r))
-.catch(err=>console.log(err.message))
-
-
-// tinhDienTich(a,b,h)
+.catch(err=>console.log(err))
