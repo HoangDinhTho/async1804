@@ -62,11 +62,23 @@ function chia(a,b){
 // .then(r=>console.log(r))
 // .catch(err=>console.log(err.message))
 
-function tinhDienTich(a,b,h){
-    return cong(a,b)
-    .then(tong=>nhan(tong, h))
-    .then(tich=>chia(tich, 2))
+// function tinhDienTich(a,b,h){
+//     return cong(a,b)
+//     .then(tong=>nhan(tong, h))
+//     .then(tich=>chia(tich, 2))
+// }
+// tinhDienTich(4,2,'x')
+// .then(r=>console.log(r))
+// .catch(err=>console.log(err))
+
+
+async function tinhDienTich(a,b,h){
+    const tong = await cong(a,b);
+    const tich = await nhan(tong,h)
+    const thuong = await chia(tich,2);
+    return thuong;
 }
-tinhDienTich(4,2,'x')
+tinhDienTich(4,2,5)
 .then(r=>console.log(r))
-.catch(err=>console.log(err))
+.catch(e=>console.log(e))
+
