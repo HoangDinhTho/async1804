@@ -12,9 +12,22 @@ function cong(a, b){
         })
     })
 }
-cong(4,2)
-.then(r =>r)
-.catch(e=>console.log(e.message))
+// cong(4,2)
+// .then(r =>r)
+// .catch(e=>console.log(e.message))
+
+function nhan(a,b){
+    const uri = `${URL}nhan/${a}/${b}`;
+    return new Promise((resolve, reject)=>{
+        if(isNaN(a) || isNaN(b) || !a || !b)
+        return reject(new Error('Invalid'))
+        request(uri,(error,res, body)=>{
+            if(error) return reject(error)
+            return resolve(JSON.parse(body).result)
+        })
+    });
+} 
+
 
 // (4+2)*5/2
 // tinhDienTich(a,b,h)
