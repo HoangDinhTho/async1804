@@ -78,7 +78,15 @@ async function tinhDienTich(a,b,h){
     const thuong = await chia(tich,2);
     return thuong;
 }
-tinhDienTich(4,2,5)
+// tinhDienTich(4,2,5)
+// .then(r=>console.log(r))
+// .catch(e=>console.log(e))
+
+// (4+2)*5/2 = 6*5/2 = 30/2 = 15
+// 2+3+5+6 = 5+5+6 = 10+6 = 16
+// 2+3+5+6 = 5+11 = 16
+
+Promise.all([cong(4,2), chia(5,2)])
+.then(r=>nhan(r[0],r[1]))
 .then(r=>console.log(r))
 .catch(e=>console.log(e))
-
